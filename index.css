@@ -1,0 +1,88 @@
+:root{
+    --edge-block:24%;
+    --middle-block:calc(90% - calc(2*var(--edge-block)));
+}
+html{
+    width:100%;
+    height:100%;
+}
+body{
+    margin:0;
+    padding:0;
+}
+body,.container{
+    width:inherit;
+    height:inherit;
+}
+
+.container>div{
+    height:inherit;
+}
+
+.container>div:first-child{
+    float: left;
+    width:40%;
+    position:relative;
+}
+.container>div:first-child>img{
+    width:100%;
+    height:inherit;
+}
+.container>div:first-child .logo-block{
+    width:100%;
+    height:9rem;
+    display:flex;
+    flex-direction: row;
+    position:absolute;
+    top: 12rem;
+    background-color: rgba(5, 5, 5, 0.432);
+   
+}
+.logo-block .flex-item-1{
+    flex-grow: 0.5;
+}
+.logo-block .flex-item-1 img{
+    
+    float:right;
+    margin-top: 1rem;
+    width:100px;
+    height: 100px;
+}
+.logo-block .flex-item-2 h2{
+    color: white;
+    padding-top: 2rem;
+}
+.logo-block .flex-item-2 .credit{
+    float:right;
+    position:relative;
+    color: white;
+    font-size: smaller;
+    margin-block-start:0; 
+    margin-block-end:0;
+    margin-inline-start:0;
+    margin-inline-end:0;
+    padding-block-start:0;
+    padding-block-end:0;
+    padding-inline-start:0; 
+    padding-inline-end:0;
+}
+
+
+.container>div:last-child{
+    display:inline-block;
+    width:59%;     
+}
+.container>div:last-child div{
+    display:block;
+    width:inherit;
+}
+.container>div:last-child .edge-block{
+    height:var(--edge-block);
+}
+.container>div:last-child div:not(.edge-block){
+    height:var(--middle-block);
+}
+p{
+    position:absolute;
+}
+
