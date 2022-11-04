@@ -178,3 +178,24 @@ body,.container{
     /* MIDDLE BLOCK*/
 
 /*SECOND CHILD*/
+@media only screen and (max-width:900px) {
+
+    .container>div:first-child .logo-block{
+        flex-direction: column;
+    }
+    
+    .logo-block .flex-item-1 img{
+        width:70px;
+        height:70px;
+        margin-top: 0;
+        float:left;
+        
+        
+    }
+
+    .logo-block .flex-item-2 h2{
+        margin-top: 0;
+        text-align: center;
+    }
+
+}
