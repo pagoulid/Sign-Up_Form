@@ -1,6 +1,7 @@
 @font-face {
     font-family: 'Scatterings-Demo';
     src: url(fonts/ScatteringsDemo/Scatterings\ Demo.ttf);
+    
 }
 :root{
     --edge-block:24%;
@@ -70,7 +71,7 @@ body,.container{
 }
 .logo-block .flex-item-2 .credit{
     float:right;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     color: white;
     font-size: smaller;
 }
