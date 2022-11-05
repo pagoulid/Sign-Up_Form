@@ -21,12 +21,14 @@ body{
 }
 body,.container{
     width:inherit;
+}
+body,.container,.container>div{
     height:inherit;
+}
+.container{
+    overflow:hidden;
 }
 
-.container>div{
-    height:inherit;
-}
 
 .container>div:first-child{
     float: left;
@@ -109,7 +111,7 @@ body,.container{
 }
 
 
-.edge-block button{
+.edge-block .button{
     display:block;
     width:30%;
     height:3rem;
