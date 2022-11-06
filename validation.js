@@ -9,6 +9,7 @@ function pswd_validation(){
     if(pswd===cpswd){
 
         if(!pswd.length>0){
+
                 pswdNode.className = '';
                 cpswdNode.className = '';
         }
@@ -91,7 +92,7 @@ function showErrorMsg(ErrorNode){
 
 function hideErrorMsg(ErrorNode){
 
-    if(ErrorNode.style.display=="block"){
+    if(ErrorNode.style.visibility == "visible"){
         ErrorNode.style.visibility = "hidden";
     }
    
@@ -101,11 +102,29 @@ function setCondition(id,value){
 
     if( id.includes('name')){
 
-        return (value.length>=3&& value.length<=10) && (new RegExp('^[a-zA-Z]+$').test(value));
+        return (value.length>=3&&value.length<=10) && (new RegExp('^[a-zA-Z]+$').test(value));
     }
     else{
-
+        
         if(id == 'email'){
+            
+            let split = value.split(/[@.]/);
+            let checkFormat = false;
+            let username = '';
+            let mailserver = '';
+            let org = '';
+
+            if(split.length==3){
+                 username = split[0];
+                 mailserver = split[1];
+                 mailserver = mailserver.replace('mail','');
+                 org = split[2];
+                 checkFormat=true;
+                 console.log(username,mailserver,org,checkFormat);
+            }
+            
+            
+            return checkFormat && (username.length<=10) && (mailserver.length<=5) && (org.length<=4) && new RegExp('^[a-zA-Z].*([a-zA-Z|0-9]).*\\@.*([a-z]).*mail.*\\..*[a-z]{2}$').test(value);
 
         }
         else if(id == 'phone'){
