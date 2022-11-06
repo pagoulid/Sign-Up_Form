@@ -107,7 +107,7 @@ function setCondition(id,value){
     else{
         
         if(id == 'email'){
-            
+
             let split = value.split(/[@.]/);
             let checkFormat = false;
             let username = '';
@@ -128,8 +128,8 @@ function setCondition(id,value){
 
         }
         else if(id == 'phone'){
-
-            return  true && new RegExp('^\\+.*[\d{3}]$').test(value);
+            
+            return  value.length==13 && new RegExp('^\\+.*[0-9]$').test(value);
         }
     }
 
