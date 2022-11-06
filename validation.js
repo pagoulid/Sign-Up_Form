@@ -32,26 +32,26 @@ function pswd_validation(){
 
 }
 
-function name_validation(first){
+function validation(id){/*For phone,names,mail*/ 
 
-        const ErrorNode = document.querySelector('.'+first+'name-error-msg');
-        const nameNode = document.getElementById(first+'name');
-        const name = nameNode.value;
+        const ErrorNode = document.querySelector('.'+id+'-error-msg');
+        const Node = document.getElementById(id);
+        const text = Node.value;
         
-        const lenCondition =name.length>=3&&name.length<=10;
-        const numCondition = new RegExp('^[a-zA-Z]+$').test(name);
+        
+        const condition = setCondition(id,text);
 
-        if(name.length>0){
+        if(text.length>0){
 
-            if(lenCondition&&numCondition){
+            if(condition){
 
-                disp(nameNode,'valid','error');
+                disp(Node,'valid','error');
                 hideErrorMsg(ErrorNode);
 
             }
             else{
 
-                disp(nameNode,'error','valid');
+                disp(Node,'error','valid');
                 showErrorMsg(ErrorNode);
 
             }
@@ -59,9 +59,9 @@ function name_validation(first){
         }
         else{
 
-            if(nameNode.className.length>0){
+            if(Node.className.length>0){
 
-                nameNode.className = '';
+                Node.className = '';
                 hideErrorMsg(ErrorNode);
             
             }
@@ -69,6 +69,7 @@ function name_validation(first){
         }
         
     }
+
 
 function disp(Node,addClass,replaceClass){
 
@@ -85,13 +86,32 @@ function disp(Node,addClass,replaceClass){
 
 
 function showErrorMsg(ErrorNode){
-    ErrorNode.style.display = "block";
+    ErrorNode.style.visibility = "visible";
 }
 
 function hideErrorMsg(ErrorNode){
 
     if(ErrorNode.style.display=="block"){
-        ErrorNode.style.display = "none";
+        ErrorNode.style.visibility = "hidden";
     }
-    
+   
+}
+
+function setCondition(id,value){
+
+    if( id.includes('name')){
+
+        return (value.length>=3&& value.length<=10) && (new RegExp('^[a-zA-Z]+$').test(value));
+    }
+    else{
+
+        if(id == 'email'){
+
+        }
+        else if(id == 'phone'){
+
+            return  true && new RegExp('^\\+.*[\d{3}]$').test(value);
+        }
+    }
+
 }

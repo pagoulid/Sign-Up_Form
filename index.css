@@ -138,7 +138,7 @@ body,.container,.container>div{
     }
     .form-container{
         display:flex;
-        flex-direction: row;
+        flex-flow: row;
         gap:4rem;
         margin-top:1rem;
         
@@ -149,9 +149,15 @@ body,.container,.container>div{
     }
     .form-container label{
         display:block;
-        margin-top: 2rem;
+        
         font-size: medium;
         font-weight: lighter;
+    }
+    .form-container label:not(.cpswd-label){
+        margin-top: 1rem;
+    }
+    .form-container .cpswd-label{/*Align confirm password field with pswd field*/
+        margin-top:5px;
     }
     .form-container input{
         width:100%;
@@ -171,9 +177,9 @@ body,.container,.container>div{
         border-color: green;
     }
     
-    .fname-error-msg,.lname-error-msg,.pswd-error-msg{
-        display:none;
-        font-size: smaller;
+    .fname-error-msg,.lname-error-msg,.email-error-msg,.phone-error-msg,.pswd-error-msg{
+        visibility:hidden;
+        font-size: 10px;
         color:red;
     }
     input:focus{
