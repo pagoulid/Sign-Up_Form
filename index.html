@@ -13,25 +13,30 @@
     <div class="container">
 
         <div>
+
             <img src="./tropic-img.jpg" alt="">
 
             <div class="logo-block">
 
                 <div class="flex-item-1">
+
                     <img src="./logo.png" alt="">
+
                 </div>
                 
                 <div class="flex-item-2">
+
                     <h2>PARADISIAC ISLAND</h2>
                     <p class="credit">Made by Nattu Adnan</p>
+
                 </div>
                 
             </div>
-            
-            
+              
         </div>
 
         <div>
+
             <div class="edge-block">
 
                 <div>
@@ -51,28 +56,30 @@
                         <fieldset>
                         
                             <label for="fname" >FIRST NAME</label>
-                            <input type="text" name="first_name" id="fname"  min="3" max="50" title="Incorrect" required>
+                            <input type="text" name="first_name" id="fname"  onblur="name_validation('f')" required>
+                            <p class="fname-error-msg">*Only letters and at least 3 charachters</p>
 
                             <label for="email">EMAIL</label>
                             <input type="email" id="email" required>
 
                             <label for="password">PASSWORD</label>
-                            <input type="password" name="password" id="password" class="pswd-error" onblur="validation()" required>
+                            <input type="password" name="password" id="password"  onblur="pswd_validation()" required>
                         
-                            <p class="error-msg">*Passwords do not match</p>
-
+                            <p class="pswd-error-msg">*Passwords do not match</p>
 
                         </fieldset>
 
                         <fieldset>
+
                             <label for="lname">LAST NAME</label>
-                            <input type="text" name="last_name" id="lname" min="3" max="50" required>
+                            <input type="text" name="last_name" id="lname" onblur="name_validation('l')" required>
+                            <p class="lname-error-msg">*Only letters and at least 3 charachters</p>
 
                             <label for="phone">PHONE NUMBER</label>
                             <input type="text" name="phone_number" id="phone" min="10" max="10" required>
 
                             <label for="cpassword">CONFIRM PASSWORD</label>
-                            <input type="password" id="cpassword" class="pswd-error" onblur="validation()" required>
+                            <input type="password" id="cpassword" onblur="pswd_validation()" required>
 
                         </fieldset>
                     
@@ -87,13 +94,14 @@
                 <div>
 
                     <input class="button" type="submit" form="form" value="Create Account">
-                    
+
                     <p>Already have an Account?</p>
                     <p>Log in</p>
 
                 </div>
             
             </div>
+
         </div>
 
     </div>

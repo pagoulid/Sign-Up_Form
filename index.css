@@ -157,20 +157,22 @@ body,.container,.container>div{
         width:100%;
         height:2rem;
         border-radius: 5px;
+        border-color: none;
         
     }
-    .form-container input:not(.pswd-error,.pswd-valid){
+    .form-container input:not(.error,.valid){
         border-color: #E5E7EB;
     }
     
-    .form-container .pswd-error{
+     .error{
         border-color: red;
     }
-    .form-container .pswd-valid{
+     .valid{
         border-color: green;
     }
     
-    .form-container .error-msg{
+    .fname-error-msg,.lname-error-msg,.pswd-error-msg{
+        display:none;
         font-size: smaller;
         color:red;
     }
