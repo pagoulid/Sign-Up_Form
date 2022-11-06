@@ -157,7 +157,7 @@ body,.container,.container>div{
         margin-top: 1rem;
     }
     .form-container .cpswd-label{/*Align confirm password field with pswd field*/
-        margin-top:5px;
+        margin-top:15px;
     }
     .form-container input{
         width:100%;
